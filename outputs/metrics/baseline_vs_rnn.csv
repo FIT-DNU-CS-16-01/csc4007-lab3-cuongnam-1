@@ -1,0 +1,3 @@
+model,input_representation,test_accuracy,test_macro_f1
+logreg,tfidf,0.9068,0.9067865772671264
+embedding_rnn,token_sequence,0.67412,0.671555674343256

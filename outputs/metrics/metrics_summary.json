@@ -1,0 +1,47 @@
+{
+  "dataset": "imdb",
+  "dataset_path": null,
+  "seed": 42,
+  "device": "cuda",
+  "model": "embedding_rnn",
+  "vocab_size_requested": 20000,
+  "vocab_size_actual": 20000,
+  "max_len": 256,
+  "embed_dim": 128,
+  "hidden_dim": 128,
+  "dropout": 0.3,
+  "batch_size": 64,
+  "epochs_requested": 6,
+  "epochs_trained": 6,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "patience": 2,
+  "splits": {
+    "train": 20000,
+    "val": 5000,
+    "test": 25000
+  },
+  "sequence_audit": {
+    "n_train": 20000,
+    "vocab_size": 20000,
+    "max_len": 256,
+    "orig_len_median": 196.0,
+    "orig_len_p95": 665.0,
+    "truncation_rate": 0.3475,
+    "unk_rate": 0.023803894998800763,
+    "avg_pad_ratio": 0.253695703125
+  },
+  "val": {
+    "loss": 0.6254825360298156,
+    "accuracy": 0.6728,
+    "macro_f1": 0.6699577287669041
+  },
+  "test": {
+    "loss": 0.6246937814712524,
+    "accuracy": 0.67412,
+    "macro_f1": 0.671555674343256
+  },
+  "generated_at": "2026-04-26T16:02:26.438441+00:00",
+  "notes": "Token sequence -> Embedding -> RNN -> classifier; early stopping on validation macro-F1.",
+  "split_protocol": "IMDB uses original train/test with validation carved from train only; local_csv uses seeded stratified splits when possible."
+}
